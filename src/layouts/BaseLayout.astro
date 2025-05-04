@@ -12,13 +12,12 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title || 'My Blog'}</title>
 		<style>
-			/* Subtle animation for links */
+			/* animation for links */
 			a {
 				transition: color 0.3s ease;
-				/* Hover styles applied via utility classes on <a> tags */
 			}
 
-			/* Subtle fade-in for main content */
+			/* fade-in for main content */
 			main {
 				animation: fadeIn 0.5s ease-in-out;
 			}
