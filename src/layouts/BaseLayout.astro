@@ -1,0 +1,43 @@
+---
+import "../styles/global.css"; // Ensure Tailwind is imported
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title || 'My Blog'}</title>
+		<style>
+			/* Subtle animation for links */
+			a {
+				transition: color 0.3s ease;
+			}
+			a:hover {
+				@apply text-blue-600; /* Example hover color using Tailwind */
+			}
+
+			/* Subtle fade-in for main content */
+			main {
+				animation: fadeIn 0.5s ease-in-out;
+			}
+
+			@keyframes fadeIn {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+		</style>
+	</head>
+	<body class="bg-gray-100 text-gray-900 font-sans">
+		<div class="max-w-3xl mx-auto px-4 py-8">
+            {/* Navigation can go here if needed */}
+			<main>
+				<slot /> {/* Page content will be injected here */}
+			</main>
+            {/* Footer can go here if needed */}
+		</div>
+	</body>
+</html> 
