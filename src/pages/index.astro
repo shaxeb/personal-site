@@ -9,26 +9,29 @@ interface PostFrontmatter {
 	[key: string]: any; // Allow other frontmatter properties
 }
 
-// Define type for the result of Astro.glob for Markdown
-interface MarkdownPost {
-	file: URL;
+// Define type for the module returned by import.meta.glob with eager: true
+interface MarkdownPostModule {
 	url?: string;
 	frontmatter: PostFrontmatter;
-	getHeadings: () => Promise<{ depth: number; slug: string; text: string }[]>;
-	compiledContent: () => string;
-	rawContent: () => string;
+	// Add other exports if needed, like compiledContent, etc.
+	[key: string]: any;
 }
 
-// 1. Fetch all posts using Astro.glob with type
-const allPosts: MarkdownPost[] = await Astro.glob('./posts/*.md');
+// 1. Fetch all posts using import.meta.glob
+// The result is an object: { './path/to/post.md': Module, ... }
+const postModules: Record<string, MarkdownPostModule> = 
+	import.meta.glob('./posts/*.md', { eager: true });
+
+// Convert the object into an array of post objects
+const allPosts = Object.values(postModules);
 
 // Sort posts by date, newest first
-allPosts.sort((a: MarkdownPost, b: MarkdownPost) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 ---
 <BaseLayout title="shah.build">
 		<h1>shah.build</h1>
 		<p>
-			I'm a software engineer based in India and currently developing a
+			I'm <a href="https://x.com/shahdotbuild">Shahzeb</a>, a software engineer based in India and currently developing a
 			Developer support solution. This is my Scratchpad where I jot down
 			what I learn and find amazing
 		</p>
@@ -39,7 +42,7 @@ allPosts.sort((a: MarkdownPost, b: MarkdownPost) => new Date(b.frontmatter.pubDa
 
 		{/* 2. Loop through posts and display data */}
 		<div class="space-y-4"> {/* Add spacing between post links */}
-			{allPosts.map((post: MarkdownPost) => (
+			{allPosts.map((post) => (
 				<a href={post.url} class="block p-4 border border-neutral-200 rounded hover:bg-neutral-100 hover:border-neutral-300 transition-colors">
 					<h3 class="text-lg font-semibold mb-1">{post.frontmatter.title}</h3>
 					<p class="text-sm text-neutral-600">

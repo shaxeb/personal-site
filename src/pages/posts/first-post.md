@@ -7,22 +7,22 @@ layout: '../../layouts/BaseLayout.astro'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public"]
+tags: ["support", "blogging", "building in public"]
 ---
-# My First Blog Post
+# Simple things are the best!
 
 Published on: 2025-05-05
 
-Welcome to my _new blog_ about learning Astro! Here, I will share my learning journey as I build a new website.
+Welcome to my _blog_ about learning Tech! Here, I will share my  journey as I build a Dev Support platform for developer facing companies.
 
 ## What I've accomplished
 
-1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
+1. **Stumbled across the problem**: Developer facing companies often find it difficult to cope up with maintaining their docs for their products; on the other hand, their new users like me find it difficult to fiddle through their docs to find relevant API calls, Syntax and SDK examples to use their stuff. 
 
-2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
+2. **Finding solutions**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
 
-3. **Making Blog Posts**: This is my first blog post! I now have Astro pages and Markdown posts!
+3. **I will write this tomorrow**
 
 ## What's next
 
-I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+I will finish the backend soon (cuz it's boring to show the backend, isn't it?), and then keep adding more posts. Watch this space for more to come.
