@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css"; // Ensure Tailwind is imported
+import "../styles/global.css"; 
 
 const { title } = Astro.props;
 ---
@@ -16,9 +16,6 @@ const { title } = Astro.props;
 			a {
 				transition: color 0.3s ease;
 			}
-			a:hover {
-				@apply text-blue-600; /* Example hover color using Tailwind */
-			}
 
 			/* Subtle fade-in for main content */
 			main {
@@ -31,13 +28,18 @@ const { title } = Astro.props;
 			}
 		</style>
 	</head>
-	<body class="bg-gray-100 text-gray-900 font-sans">
-		<div class="max-w-3xl mx-auto px-4 py-8">
-            {/* Navigation can go here if needed */}
+	<body class="bg-white text-gray-800 font-sans">
+		<div class="max-w-2xl mx-auto px-4 py-12">
+            <header class="text-right mb-12">
+                <a href="/" class="text-lg font-semibold hover:text-blue-600">shah.build</a>
+            </header>
 			<main>
 				<slot /> {/* Page content will be injected here */}
 			</main>
-            {/* Footer can go here if needed */}
+            <footer class="mt-16 text-center text-gray-500 text-sm">
+                {/* Footer content can go here */}
+                © {new Date().getFullYear()} shah.build
+            </footer>
 		</div>
 	</body>
 </html> 

@@ -1,18 +1,9 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>shah.build - Blog</title>
-	</head>
-	<body>
-		<a href="/blog">Blog</a>
-		<a href="/about">About</a>
+<BaseLayout title="shah.build - Home">
+		<a href="/blog" class="hover:text-blue-600">Blog</a>
+		<a href="/about" class="hover:text-blue-600">About</a>
 
 		<h1>shah.build</h1>
 		<p>
@@ -36,5 +27,4 @@
 			<p><em>Published: 2024-07-25</em></p>
 			<p>Astro is pretty cool for building static sites.</p>
 		</article>
-	</body>
-</html>
+</BaseLayout>
