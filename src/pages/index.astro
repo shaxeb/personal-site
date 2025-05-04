@@ -25,7 +25,7 @@ const allPosts: MarkdownPost[] = await Astro.glob('./posts/*.md');
 // Sort posts by date, newest first
 allPosts.sort((a: MarkdownPost, b: MarkdownPost) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
 ---
-<BaseLayout title="shah.build - Home">
+<BaseLayout title="shah.build">
 		<h1>shah.build</h1>
 		<p>
 			I'm a software engineer based in India and currently developing a
