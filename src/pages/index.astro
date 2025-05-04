@@ -2,9 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="shah.build - Home">
-		<a href="/blog" class="hover:text-blue-600">Blog</a>
-		<a href="/about" class="hover:text-blue-600">About</a>
-
 		<h1>shah.build</h1>
 		<p>
 			I'm a software engineer based in India and currently developing a
@@ -12,19 +9,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			what I learn and find amazing
 		</p>
 
-		<hr />
+		<hr class="my-8 border-neutral-200" />
 
 		<h2>Blog Posts</h2>
 
-		<article>
-			<h3>My First Post</h3>
-			<p><em>Published: 2024-07-26</em></p>
-			<p>This is the content of my first blog post. Welcome!</p>
-		</article>
+		<a href="/posts/post-1/" class="block hover:text-blue-600">
+			<article>
+				<h3>My First Post</h3>
+				<p><em>Published: 2024-07-26</em></p>
+				<p>This is the content of my first blog post. Welcome!</p>
+			</article>
+		</a>
 
-		<article>
-			<h3>Learning Astro</h3>
-			<p><em>Published: 2024-07-25</em></p>
-			<p>Astro is pretty cool for building static sites.</p>
-		</article>
+		<a href="/posts/post-2/" class="block hover:text-blue-600">
+			<article>
+				<h3>Learning Astro</h3>
+				<p><em>Published: 2024-07-25</em></p>
+				<p>Astro is pretty cool for building static sites.</p>
+			</article>
+		</a>
 </BaseLayout>
