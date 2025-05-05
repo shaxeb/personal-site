@@ -13,7 +13,7 @@ tags: ["support", "blogging", "building in public"]
 
 Published on: 2025-05-05
 
-Welcome to my _blog_ about learning Tech! Here, I will share my journey as I build a Dev Support platform for developer facing companies. Btw, if you think why this looks like a paper design, it's because I like to keep things simple. Also, the story starts somehwere in the mid 2022, when I was doing my Eletrical Engineering and started learning about IoT development for my final year projects and I : 
+Welcome to my _blog_ about learning Tech, Mentality, Business and anything else I find interesting! In this post, I will share my journey as I build a Dev Support platform for developer facing companies. Btw, if you think why this looks like a paper design, it's because I like to keep things simple. Also, the story starts somehwere in the mid 2022, when I was doing my Eletrical Engineering and started learning about IoT development for my final year projects and I : 
 
 1. **Stumbled across the problem**: Developer facing companies often find it difficult to cope up with maintaining their docs for their products; on the other hand, their new users like me find it difficult to fiddle through their docs to find relevant API calls, Syntax and SDK examples to use their stuff. 
 
