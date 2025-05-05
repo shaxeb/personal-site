@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Define type for Astro Markdown post frontmatter
 interface PostFrontmatter {
@@ -19,47 +19,68 @@ interface MarkdownPostModule {
 
 // 1. Fetch all posts using import.meta.glob
 // The result is an object: { './path/to/post.md': Module, ... }
-const postModules: Record<string, MarkdownPostModule> = 
-	import.meta.glob('./posts/*.md', { eager: true });
+const postModules: Record<string, MarkdownPostModule> = import.meta.glob(
+	"./posts/*.md",
+	{ eager: true },
+);
 
 // Convert the object into an array of post objects
 const allPosts = Object.values(postModules);
 
 // Sort posts by date, newest first
-allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+allPosts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.pubDate).valueOf() -
+		new Date(a.frontmatter.pubDate).valueOf(),
+);
 ---
+
 <BaseLayout title="shah.build">
-		<h1>shah.build</h1>
-		<p>
-			I'm <a href="https://x.com/shahdotbuild">Shahzeb</a>, a software engineer based in India and currently developing a
-			Developer support solution. This is my Scratchpad where I jot down
-			what I learn and find amazing
-		</p>
+	<h1>shah.build</h1>
+	<p>
+		I'm <a href="https://x.com/shahdotbuild">Shahzeb</a>, a software
+		engineer based in India and currently developing a Developer support
+		solution. This is my Scratchpad where I jot down what I learn and find
+		amazing
+	</p>
 
-		<hr class="my-8 border-neutral-200" />
+	<hr class="my-8 border-neutral-200" />
 
-		<h2>Blog Posts</h2>
+	<h2>Blog Posts</h2>
 
-		{/* 2. Loop through posts and display data */}
-		<div class="space-y-4"> {/* Add spacing between post links */}
-			{allPosts.map((post) => (
-				<a href={post.url} class="block p-4 border border-neutral-200 rounded hover:bg-neutral-100 hover:border-neutral-300 transition-colors">
-					<h3 class="text-lg font-semibold mb-1">{post.frontmatter.title}</h3>
+	{/* 2. Loop through posts and display data */}
+	<div class="space-y-4">
+		{/* Add spacing between post links */}
+		{
+			allPosts.map((post) => (
+				<a
+					href={post.url}
+					class="block p-4 border border-neutral-200 rounded hover:bg-neutral-100 hover:border-neutral-300 transition-colors"
+				>
+					<h3 class="text-lg font-semibold mb-1">
+						{post.frontmatter.title}
+					</h3>
 					<p class="text-sm text-neutral-600">
-						Published: {new Date(post.frontmatter.pubDate).toLocaleDateString('en-US', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric'
-						})}
+						Published:{" "}
+						{new Date(post.frontmatter.pubDate).toLocaleDateString(
+							"en-US",
+							{
+								year: "numeric",
+								month: "long",
+								day: "numeric",
+							},
+						)}
 					</p>
 					{/* Optional: Display description if available */}
 					{post.frontmatter.description && (
-						<p class="mt-2 text-neutral-700">{post.frontmatter.description}</p>
+						<p class="mt-2 text-neutral-700">
+							{post.frontmatter.description}
+						</p>
 					)}
 				</a>
-			))}
-		</div>
+			))
+		}
+	</div>
 
-		<hr class="my-8 border-neutral-200" />
-
+	<hr class="my-8 border-neutral-200" />
 </BaseLayout>
