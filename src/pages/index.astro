@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+// Remove the import if it's not used elsewhere on this page
+// import NewsletterForm from "../components/NewsletterForm.astro";
 
 // Define type for Astro Markdown post frontmatter
 interface PostFrontmatter {
@@ -84,6 +86,9 @@ allPosts.sort(
 			))
 		}
 	</div>
+
+	{/* Newsletter Section - Removed the redundant form */}
+	{/* <NewsletterForm /> */}
 
 	<hr class="my-8 border-neutral-200" />
 </BaseLayout>
