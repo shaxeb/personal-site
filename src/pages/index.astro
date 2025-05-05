@@ -41,17 +41,19 @@ allPosts.sort(
 	title="shah.build"
 	description="Shahzeb's personal blog covering everything he finds interesting"
 >
-	<h1>shah.build</h1>
+	<h1 class="font-semibold mb-4">shah.build</h1>
 	<p>
-		I'm <a href="https://x.com/shahdotbuild">Shahzeb</a>, a software
-		engineer based in India and currently developing a Developer support
-		solution. This is my Scratchpad where I jot down what I learn and find
-		amazing
+		I'm <a
+			class="text-sky-600 hover:underline"
+			href="https://x.com/shahdotbuild">Shahzeb</a
+		>, a software engineer based in India and currently developing a
+		Developer support solution. This is my Scratchpad where I jot down what
+		I learn and find amazing.
 	</p>
 
 	<hr class="my-8 border-neutral-200" />
 
-	<h2>Blog Posts</h2>
+	<h2 class="font-semibold mb-4">Blog Posts</h2>
 
 	{/* 2. Loop through posts and display data */}
 	<div class="space-y-4">
@@ -86,9 +88,4 @@ allPosts.sort(
 			))
 		}
 	</div>
-
-	{/* Newsletter Section - Removed the redundant form */}
-	{/* <NewsletterForm /> */}
-
-	<hr class="my-8 border-neutral-200" />
 </BaseLayout>
