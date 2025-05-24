@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { remarkReadingTime } from './remark-reading-time.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
 import sitemapPlugin from '@astrojs/sitemap';
@@ -15,5 +16,13 @@ export default defineConfig({
   },
 
   integrations: [react()],
-  adapter: netlify()
+  adapter: netlify(),
+
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    },
+  },
 });
