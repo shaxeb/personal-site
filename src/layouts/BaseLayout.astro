@@ -19,124 +19,143 @@ const { title, description, frontmatter } = Astro.props;
     <style>
       /* animation for links */
       a {
-        transition: color 0.3s ease;
+        transition: all 0.2s ease;
       }
 
       /* fade-in for main content */
-      main {
-        animation: fadeIn 0.5s ease-in-out;
+      .content-wrapper {
+        animation: fadeIn 0.6s ease-out;
       }
 
       /* Style for H1 titles from Markdown content */
       main :global(h1) {
-        font-weight: 500;
-        font-size: 2rem;
+        font-weight: 600;
+        font-size: 1.875rem;
+        line-height: 1.2;
+        color: #1f2937;
       }
 
       @keyframes fadeIn {
         from {
           opacity: 0;
+          transform: translateY(10px);
         }
         to {
           opacity: 1;
+          transform: translateY(0);
         }
       }
     </style>
   </head>
-  <body class="bg-neutral-50 text-neutral-800 font-sans">
+  <body class="bg-white text-gray-900 font-sans antialiased">
     <Toaster position="bottom-center" richColors client:load />
-    <div class="max-w-2xl mx-auto px-6 py-12">
-      <main class="space-y-8">
-        {
-          /* Render title from frontmatter if it exists, otherwise use page title */
-        }
-        <h1>{frontmatter?.title || title}</h1>
 
-        {/* Render pubDate and minutesRead if they exist in frontmatter */}
-        {
-          frontmatter?.pubDate && frontmatter?.minutesRead && (
-            <div class="text-sm text-neutral-600 mb-4">
-              <span>
-                {new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </span>
-              <span class="mx-1">·</span>
-              <span>{frontmatter.minutesRead}</span>
-            </div>
-          )
-        }
+    <div class="min-h-screen">
+      <div class="max-w-3xl mx-auto px-6 py-16">
+        <div class="content-wrapper">
+          {/* Header with conditional title */}
+          <header class="mb-12">
+            {
+              frontmatter?.title ? (
+                <div>
+                  <h1 class="text-gray-900 text-2xl font-semibold mb-3">
+                    {frontmatter.title}
+                  </h1>
+                  {frontmatter?.pubDate && frontmatter?.minutesRead && (
+                    <div class="text-sm text-gray-500 flex items-center gap-2">
+                      <time>
+                        {new Date(frontmatter.pubDate).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          }
+                        )}
+                      </time>
+                      <span>·</span>
+                      <span>{frontmatter.minutesRead}</span>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <h1 class="text-gray-900 text-2xl font-semibold">{title}</h1>
+              )
+            }
+          </header>
 
-        <slot />
-        {/* Page content will be injected here */}
-      </main>
+          {/* Main content */}
+          <main class="prose prose-gray max-w-none">
+            <slot />
+          </main>
 
-      {/* Newsletter Section - Only show on home page */}
-      {
-        Astro.url.pathname === "/" && (
-          <section class="mt-16 pt-8 border-t border-neutral-200">
-            <h2 class="font-semibold mb-4">Newsletter</h2>
-            <p class="mb-4 text-neutral-600">
-              Get updates when I publish new write ups.
-            </p>
-            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                placeholder="Your email address"
-                class="flex-grow px-3 py-2 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-sky-300 sm:text-sm"
-              />
-              <button
-                type="submit"
-                class="px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Subscribe
-              </button>
-            </form>
-          </section>
-        )
-      }
+          {/* Newsletter Section - Only on home page */}
+          {
+            Astro.url.pathname === "/" && (
+              <section class="mt-20 pt-8 border-t border-gray-200">
+                <div class="space-y-4">
+                  <h2 class="text-lg font-medium text-gray-900">
+                    Stay updated
+                  </h2>
+                  <p class="text-gray-600 text-sm leading-relaxed">
+                    Get notified when I publish new articles and insights.
+                  </p>
+                  <form id="newsletter-form" class="space-y-3">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      required
+                      placeholder="Enter your email"
+                      class="w-full px-4 py-3 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                    <button
+                      type="submit"
+                      class="w-full px-4 py-3 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Subscribe
+                    </button>
+                  </form>
+                </div>
+              </section>
+            )
+          }
 
-      {/* Conditionally render Back to Home link */}
-      {
-        Astro.url.pathname !== "/" && (
-          <nav class="mt-10 pt-8 border-t border-neutral-200">
-            <a
-              href="/"
-              class="text-neutral-600 hover:text-neutral-900 inline-flex items-center text-sm font-medium transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
-              Back to Home
-            </a>
-          </nav>
-        )
-      }
+          {/* Back to home navigation */}
+          {
+            Astro.url.pathname !== "/" && (
+              <nav class="mt-16 pt-8 border-t border-gray-200">
+                <a
+                  href="/"
+                  class="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors group"
+                >
+                  <svg
+                    class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                  Home
+                </a>
+              </nav>
+            )
+          }
+        </div>
 
-      {/* Footer Section */}
-      <footer
-        class="mt-8 pt-6 border-t border-neutral-200 text-center text-neutral-500 text-xs"
-      >
-        <p>
-          &copy; {new Date().getFullYear()} shah.build. All rights reserved.
-        </p>
-      </footer>
+        {/* Footer */}
+        <footer class="mt-20 pt-8 border-t border-gray-200">
+          <div class="text-center text-xs text-gray-500">
+            <p>&copy; {new Date().getFullYear()} shah.build</p>
+          </div>
+        </footer>
+      </div>
     </div>
 
     <script>
@@ -157,7 +176,6 @@ const { title, description, frontmatter } = Astro.props;
           if (submitButton) submitButton.disabled = true;
 
           const submittingToastId = toast.loading("Submitting...");
-
           const emailInput = form.querySelector("#email") as HTMLInputElement;
           const email = emailInput?.value;
 
@@ -167,9 +185,7 @@ const { title, description, frontmatter } = Astro.props;
             }
             const response = await fetch("/api/subscribe", {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
+              headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ email: email }),
             });
 

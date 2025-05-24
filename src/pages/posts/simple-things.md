@@ -14,6 +14,8 @@ tags: ["support", "blogging", "building in public"]
 
 Welcome to my _blog_ about learning Tech, Mentality, Business and anything else I find interesting! In this post, I will share my journey as I build a Dev Support platform for developer facing companies. Btw, if you think why this looks like a paper design, it's because I like to <strong>keep things simple</strong> cause they're <strong>effective</strong>. Also, the story starts somehwere in the mid 2022, when I was doing my Eletrical Engineering and started learning about IoT development for my final year projects and I :
 
+<br>
+
 1. **Stumbled across the problem**: Developer facing companies often find it difficult to cope up with maintaining their docs for their products; on the other hand, their new users like me find it difficult to fiddle through their docs to find relevant API calls, Syntax and SDK examples to use their stuff.
 
 <br>
@@ -28,7 +30,11 @@ Welcome to my _blog_ about learning Tech, Mentality, Business and anything else 
 
 4. **Cooking the MVP**: MVP is almost done, I'm just testing the core functionalities of the app right now and cooking another small but valuable feature called "analytics" on user's documention to find gaps. once these two are done, I will be refining and releasing it in Beta. It's always better to launch a broken MVP and build from there, than to launch a completely working one that no one wants.
 
+<br>
+
 ## What's next
+
+<br>
 
 I will finish the backend soon (cuz it's boring to show the backend, isn't it?), and then keep adding more posts. Watch this space for more to come.
 
