@@ -12,7 +12,7 @@ tags: ["support", "blogging", "building in public"]
 
 <br>
 
-Welcome to my _blog_ about learning Tech, Mentality, Business and anything else I find interesting! In this post, I will share my journey as I build a Dev Support platform for developer facing companies. Btw, if you think why this looks like a paper design, it's because I like to keep things simple cause they're <strong>effective</strong>. Also, the story starts somehwere in the mid 2022, when I was doing my Eletrical Engineering and started learning about IoT development for my final year projects and I :
+Welcome to my _blog_ about learning Tech, Mentality, Business and anything else I find interesting! In this post, I will share my journey as I build a Dev Support platform for developer facing companies. Btw, if you think why this looks like a paper design, it's because I like to <strong>keep things simple</strong> cause they're <strong>effective</strong>. Also, the story starts somehwere in the mid 2022, when I was doing my Eletrical Engineering and started learning about IoT development for my final year projects and I :
 
 1. **Stumbled across the problem**: Developer facing companies often find it difficult to cope up with maintaining their docs for their products; on the other hand, their new users like me find it difficult to fiddle through their docs to find relevant API calls, Syntax and SDK examples to use their stuff.
 
@@ -32,14 +32,20 @@ Welcome to my _blog_ about learning Tech, Mentality, Business and anything else 
 
 I will finish the backend soon (cuz it's boring to show the backend, isn't it?), and then keep adding more posts. Watch this space for more to come.
 
-<hr class="my-8 border-neutral-200" />
-<section class="footnotes">
-  <h2>References</h2>
-  <ol>
-    <li id="fn-1">
-      a RAG app helps you get precise answers from your own fed information quickly and easily, without having to read through everything yourself. Imagine a bot that already knows the documnetation you want to find your api call in and answers you as needed.
-      <a href="#ref-1" aria-label="Back to content">&#8617;</a>
-    </li>
-    <!-- Add more li elements for future footnotes -->
-  </ol>
-</section>
+<div class="mt-12 pt-8 border-t border-neutral-200">
+  <h2 class="text-lg font-semibold mb-6 text-neutral-900">References</h2>
+  <div class="space-y-4">
+    <div id="fn-1" class="text-sm leading-relaxed">
+      <span class="inline-flex items-center justify-center w-6 h-6 bg-neutral-100 text-neutral-600 rounded-full text-xs font-medium mr-3 flex-shrink-0">1</span>
+      <div class="inline">
+        <span class="text-neutral-700">
+          A RAG app helps you get precise answers from your own fed information quickly and easily, without having to read through everything yourself. Imagine a bot that already knows the documentation you want to find your API call in and answers you as needed.
+        </span>
+        <a href="#ref-1" class="ml-2 text-sky-600 hover:text-sky-800 text-xs font-medium transition-colors" aria-label="Back to content">
+          ↩ Back
+        </a>
+      </div>
+    </div>
+    <!-- Add more reference items here as needed -->
+  </div>
+</div>
