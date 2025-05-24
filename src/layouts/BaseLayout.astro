@@ -15,7 +15,7 @@ const { title, description, frontmatter } = Astro.props;
       name="description"
       content={description || "Personal website and blog of Shahzeb"}
     />
-    <title>{title || "My Blog"}</title>
+    <title>{frontmatter?.title || title || "My Blog"}</title>
     <style>
       /* animation for links */
       a {
