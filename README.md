@@ -8,7 +8,7 @@ A modern, minimal personal website and blog built with Astro, featuring clean de
 - **Blog with Reading Time** - Automatically calculated reading time for each post
 - **Newsletter Signup** - Integrated email subscription with toast notifications
 - **SEO Optimized** - Meta tags, descriptions, and schema markup for better search visibility
-- **Analytics Ready** - PostHog integration for user behavior tracking
+- **Analytics Ready** - PostHog integration for user behavior tracking (note: may not work on Netlify hosting)
 - **Performance First** - Built with Astro for lightning-fast static site generation
 - **Responsive Design** - Tailwind CSS for mobile-first, responsive layouts
 - **Type Safety** - Full TypeScript support throughout
@@ -70,7 +70,7 @@ All commands are run from the root of the project:
 - Email subscription form on homepage
 - Toast notifications for user feedback
 - API endpoint for handling subscriptions
-- PostHog event tracking for analytics
+- PostHog event tracking for analytics (may not work on Netlify due to ad blockers)
 
 ### Performance & SEO
 
@@ -154,6 +154,8 @@ The site is configured for Netlify deployment with:
 - Automatic builds on git push
 - Edge functions for API endpoints
 - Environment variable management
+
+**Note**: PostHog analytics may not work properly on Netlify due to ad blockers and content security policies. Consider alternative hosting platforms like Vercel if analytics tracking is critical.
 
 ## 📄 License
 
