@@ -55,7 +55,7 @@ Making your SEO better gets you this :
 <br>
 
 <div class="text-center my-8">
-  <img src="/seo-clicks.jpg" alt="Google Search Traction Notification" style="border-radius: 40px; max-width: 700px;" class="mx-auto" />
+  <img src="/seo-clicks.jpg" alt="Google Search Traction Notification" style="border-radius: 30px;" class="mx-auto w-full max-w-2xl h-auto" />
   <p class="text-center mt-4 text-gray-700 font-medium">Traction without even launching the SaaS officially</p>
 </div>
 
