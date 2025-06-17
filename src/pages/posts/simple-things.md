@@ -1,8 +1,8 @@
 ---
 title: "Simple things"
 pubDate: "May 5, 2025"
-description: "This is the first post of my new Astro blog."
-author: "Astro Learner"
+description: "My journey building a Dev Support platform for developer-facing companies, from stumbling across the problem to cooking up an MVP solution."
+author: "Shah"
 layout: "../../layouts/BaseLayout.astro"
 image:
   url: "https://docs.astro.build/assets/rose.webp"
