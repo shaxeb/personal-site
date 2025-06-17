@@ -10,13 +10,11 @@ image:
 tags: ["saas", "backend", "frontend", "startup", "seo"]
 ---
 
-<br>
-
-<a href="https://mdshahzeb.kit.com/" title="shah.dispatch - Your friendly neighborhood tinkerer's newsletter about tech, mentality, business and everything interesting" target="_blank" rel="noopener noreferrer">**shah.dispatch**</a> by [shah.build](https://shah.build)
+<!-- <a href="https://mdshahzeb.kit.com/" title="shah.dispatch - Your friendly neighborhood tinkerer's newsletter about tech, mentality, business and everything interesting" target="_blank" rel="noopener noreferrer">**shah.dispatch**</a> by [shah.build](https://shah.build) -->
 
 <br>
 
-Now the backend is complete and and frontend is getting started and I need to ship things faster. Here's the things I learnt while developing the backend :
+Now the backend is complete and and I am getting started with the frontend and I need to ship things faster. Here's the things I learnt while developing the backend :
 
 <br>
 
@@ -57,7 +55,7 @@ Making your SEO better gets you this :
 <br>
 
 <div class="text-center my-8">
-  <img src="/seo-clicks.jpg" alt="Google Search Traction Notification" style="border-radius: 30px; max-width: 700px;" class="mx-auto" />
+  <img src="/seo-clicks.jpg" alt="Google Search Traction Notification" style="border-radius: 40px; max-width: 700px;" class="mx-auto" />
   <p class="text-center mt-4 text-gray-700 font-medium">Traction without even launching the SaaS officially</p>
 </div>
 

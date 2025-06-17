@@ -151,9 +151,35 @@ const { title, description, frontmatter } = Astro.props;
 
         {/* Footer */}
         <footer class="mt-20 pt-8 border-t border-gray-200">
-          <div class="text-center text-xs text-gray-500">
-            <p>&copy; {new Date().getFullYear()} shah.build</p>
-          </div>
+          {
+            Astro.url.pathname === "/" ? (
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <a href="https://x.com/shahdotbuild" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="/profile-pic.png" 
+                      alt="Shah" 
+                      class="w-12 h-12 rounded-full object-cover hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+                  <a href="https://x.com/shahdotbuild" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src="/signature.png" 
+                      alt="Shah's signature" 
+                      class="h-10 object-contain hover:opacity-80 transition-opacity"
+                    />
+                  </a>
+                </div>
+                <div class="text-xs text-gray-500">
+                  <p>shah.build. All rights reserved</p>
+                </div>
+              </div>
+            ) : (
+              <div class="text-center text-xs text-gray-500">
+                <p>&copy; {new Date().getFullYear()} shah.build</p>
+              </div>
+            )
+          }
         </footer>
       </div>
     </div>
