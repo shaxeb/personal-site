@@ -1,8 +1,12 @@
 ---
 import "../styles/global.css";
 import { Toaster } from "sonner";
+import { getImagePath } from "astro-opengraph-images";
 
 const { title, description, frontmatter } = Astro.props;
+const { url, site } = Astro;
+const openGraphImageUrl = getImagePath({ url, site });
+const ogUrl = site ? new URL(url?.pathname || "/", site).toString() : (url?.toString?.() || "/");
 ---
 
 <html lang="en">
@@ -11,6 +15,11 @@ const { title, description, frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={frontmatter?.title || title || "My Blog"} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={openGraphImageUrl} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:description" content={description || "Personal website and blog of Shahzeb"} />
     <meta
       name="description"
       content={description || "Personal website and blog of Shahzeb"}
