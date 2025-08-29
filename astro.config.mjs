@@ -15,7 +15,7 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://shah.build",
+  site: "https://shahdotbuild.netlify.app",
   vite: {
     plugins: [tailwindcss(), sitemapPlugin()]
   },

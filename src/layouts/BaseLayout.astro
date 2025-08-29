@@ -19,10 +19,10 @@ const ogUrl = site ? new URL(url?.pathname || "/", site).toString() : (url?.toSt
     <meta property="og:type" content="website" />
     <meta property="og:image" content={openGraphImageUrl} />
     <meta property="og:url" content={ogUrl} />
-    <meta property="og:description" content={description || "Personal website and blog of Shahzeb"} />
+    <meta property="og:description" content={description || "Shahzeb's personal blog covering everything he finds interesting"} />
     <meta
       name="description"
-      content={description || "Personal website and blog of Shahzeb"}
+      content={description || "Shahzeb's personal blog covering everything he finds interesting"}
     />
     <title>{frontmatter?.title || title || "My Blog"}</title>
     <style>
