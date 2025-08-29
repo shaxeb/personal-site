@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemapPlugin from '@astrojs/sitemap';
 
 import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
 
 import netlify from '@astrojs/netlify';
 
@@ -15,7 +16,7 @@ export default defineConfig({
     plugins: [tailwindcss(), sitemapPlugin()]
   },
 
-  integrations: [react()],
+  integrations: [react(), mdx()],
   adapter: netlify(),
 
   markdown: {

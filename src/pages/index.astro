@@ -21,7 +21,7 @@ interface MarkdownPostModule {
 
 // Fetch all posts using import.meta.glob
 const postModules: Record<string, MarkdownPostModule> = import.meta.glob(
-  "./posts/*.md",
+  "./posts/*.{md,mdx}",
   { eager: true }
 );
 
