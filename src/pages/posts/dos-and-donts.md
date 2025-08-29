@@ -24,9 +24,9 @@ Apart from that, I’ve learnt a lot more about programming languages and what�
 
 “What’s Multithreaded and Single Threaded languages again?” **Multithreaded languages** are designed to run multiple threads in parallel without artificial locks like **Python’s GIL**<sup id="ref-1"><a href="#fn-1" aria-label="Footnote 1">1</a></sup>. Some of them are Java, C++, C#, Go, Rust. Whereas a **single-threaded language** means your code runs one step at a time, in one sequence, on a single thread. **No “true” parallelism** by default.
 
-• **JavaScript** is the most famous example. It runs on a **single thread** but uses something called an **event loop**<sup id="ref-2"><a href="#fn-2" aria-label="Footnote 2">2</a></sup> and **async callbacks/promises** to handle multiple tasks efficiently (**without blocking the main thread**).
-
-• **Python** (kind of a middle case): it supports multithreading but because of **GIL (Global Interpreter Lock)** it often behaves like a **single-threaded language** for CPU tasks.
+> • **JavaScript** is the most famous example. It runs on a **single thread** but uses something called an **event loop**<sup id="ref-2"><a href="#fn-2" aria-label="Footnote 2">2</a></sup> and **async callbacks/promises** to handle multiple tasks efficiently (**without blocking the main thread**).
+>
+> • **Python** (kind of a middle case): it supports multithreading but because of **GIL (Global Interpreter Lock)** it often behaves like a **single-threaded language** for CPU tasks.
 
 <br>
 
@@ -48,6 +48,10 @@ Okay so how did I solve that? We use something called **multi-processing**<sup i
 
 <br>
 
+"Okay so how did you solve this issue?" With something called Multiprocessing
+
+<br>
+
 Look at the diagram below:
 
 <div class="text-center my-8">
@@ -61,13 +65,13 @@ But here’s the tricky part: if each process is working independently, how do w
 
 Here’s how I did it:
 
-• **Each child process** finishes a chunk of work (say copying a file or talking to the microprocessor).
-
-• It immediately sends **progress updates** to the main process.
-
-• The main process then pushes those updates to **Redis**<sup id="ref-5"><a href="#fn-5" aria-label="Footnote 5">5</a></sup>.
-
-• Redis broadcasts through **Socket.IO**<sup id="ref-6"><a href="#fn-6" aria-label="Footnote 6">6</a></sup> events → straight to the frontend.
+> • **Each child process** finishes a chunk of work (say copying a file or talking to the microprocessor).
+>
+> • It immediately sends **progress updates** to the main process.
+>
+> • The main process then pushes those updates to **Redis**<sup id="ref-5"><a href="#fn-5" aria-label="Footnote 5">5</a></sup>.
+>
+> • Redis broadcasts through **Socket.IO**<sup id="ref-6"><a href="#fn-6" aria-label="Footnote 6">6</a></sup> events → straight to the frontend.
 
 The result? My frontend in JavaScript **keeps updating live**, file copy progress bars move, device mount/unmount updates show up in **real-time**, all without blocking.
 
